@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.377</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E6877DD8-BE8D-4E68-A871-FC5E9B20707D}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <AssemblyName>DizzyClient</AssemblyName>
+    <OutputType>Library</OutputType>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\Rust\Rust_By_NitrouX1_y_Raw\Rust Game\rust_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\Rust\Rust_By_NitrouX1_y_Raw\Rust Game\rust_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.Cursor">
+      <HintPath>..\..\..\Rust\Rust_By_NitrouX1_y_Raw\Rust Game\rust_Data\Managed\Facepunch.Cursor.dll</HintPath>
+    </Reference>
+    <Reference Include="uLink">
+      <HintPath>..\..\..\Rust\Rust_By_NitrouX1_y_Raw\Rust Game\rust_Data\Managed\uLink.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.HitBox">
+      <HintPath>..\..\..\Rust\Rust_By_NitrouX1_y_Raw\Rust Game\rust_Data\Managed\Facepunch.HitBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.ID">
+      <HintPath>..\..\..\Rust\Rust_By_NitrouX1_y_Raw\Rust Game\rust_Data\Managed\Facepunch.ID.dll</HintPath>
+    </Reference>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="DizzyHacks\GUIS\GUIWallhack.cs" />
+    <Compile Include="DizzyHacks\Hacks\ESP_Animal.cs" />
+    <Compile Include="DizzyHacks\Hacks\ESP_UpdateOBJs.cs" />
+    <Compile Include="DizzyHacks\Hacks\Wallhack.cs" />
+    <Compile Include="DizzyHacks\Ready.cs" />
+    <Compile Include="DizzyHacks\GUIS\GUIAimbot.cs" />
+    <Compile Include="DizzyHacks\GUIS\GUICrosshair.cs" />
+    <Compile Include="DizzyHacks\GUIS\GUIEsp.cs" />
+    <Compile Include="DizzyHacks\GUIS\GUIMisc.cs" />
+    <Compile Include="DizzyHacks\Hacks\Aimbot.cs" />
+    <Compile Include="DizzyHacks\Rendering\BoundingBox2D.cs" />
+    <Compile Include="DizzyHacks\Hacks\Bypass.cs" />
+    <Compile Include="DizzyHacks\Hacks\Local.cs" />
+    <Compile Include="DizzyHacks\Hacks\ESP_Loot.cs" />
+    <Compile Include="DizzyHacks\Hacks\Misc.cs" />
+    <Compile Include="DizzyHacks\Hacks\ESP_Player.cs" />
+    <Compile Include="DizzyHacks\Hacks\ESP_RaidHelper.cs" />
+    <Compile Include="DizzyHacks\Hacks\ESP_Resource.cs" />
+    <Compile Include="DizzyHacks\Rendering\Canvas.cs" />
+    <Compile Include="DizzyHacks\Rendering\UColor.cs" />
+    <Compile Include="DizzyHacks\Settings\CVars.cs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PreBuildEvent>del "C:\Users\OFernandez\Documents\Reflector\Disassembler\DizzyClient\bin\Debug\DizzyClient.dll" /Q
+</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "C:\Users\OFernandez\Documents\Reflector\Disassembler\DizzyClient\bin\Debug\DizzyClient.dll" "C:\Users\OFernandez\Documents\Reflector\Disassembler\DizzyClient\Titanium\mods\DizzyClient 1.0 Rust 25.02.14" /Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>
